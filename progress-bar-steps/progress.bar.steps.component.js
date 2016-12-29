@@ -8,6 +8,7 @@
       bindings: {
         totalSteps: '<',
         currentStep: '<',
+        stepsNames: '<',
         sizeClass: '@'
       }
     })
@@ -26,18 +27,7 @@
       //li.setAttribute("data-step", i); //Información para dentro del paso
       //li.appendChild(document.createTextNode(i)); //Información para debajo del paso
 
-
-// NOMBRES TEMPORALES !!!
-if (i===1) {
-  li.appendChild(document.createTextNode("1 Datos origen"));
-} else 
-if (i===2) {
-  li.appendChild(document.createTextNode("2 Datos destino"));
-} else {
-  li.appendChild(document.createTextNode("3 Resumen"));
-}
-// NOMBRES TEMPORALES !!!
-
+      li.appendChild(document.createTextNode(ctrl.stepsNames[i-1]));
 
       if (i < ctrl.currentStep) {
         li.setAttribute("class", "is-complete");
